@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+    .main-container {
+        min-height: 100vh;
+        background-color: #ddd;
+        background: linear-gradient(
+            to right bottom,
+            rgba(218, 177, 177, 0.7),
+            rgba(66, 66, 66, 0.3)
+        );
+
+        .inner-container {
+            width: 70%;
+            background-color: #ddd;
+            padding: 55px;
+            border-radius: 1%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            backdrop-filter: blur(10rem);
+            z-index: 2;
+
+            @media (max-width: 992px) {
+                .bottom-circle {
+                    display: none;
+                }
+                .top-circle {
+                    display: none;
+                }
+            }
+            .tab-container {
+                .tab-nav {
+                    width: 75%;
+                    margin: 0 10px;
+                    border-bottom: 1px solid #999;
+
+                    li {
+                        text-align: center;
+                        width: 32.3%;
+                        list-style: none;
+                        display: inline-block;
+                        font-size: 18px;
+                        font-weight: 500;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                    }
+                    @media (max-width: 490px) {
+                        li {
+                            width: 100%;
+                            display: block;
+                            text-align: left;
+                        }
+                    }
+                    li:active {
+                        color: #515eaa;
+                        transform: scale(1.2);
+                    }
+                }
+                @media (max-width: 992px) {
+                    .tab-nav {
+                        width: 100%;
+                    }
+                }
+            }
+            .row {
+                width: 100%;
+                min-height: 63vh;
+                display: none;
+                align-items: center;
+                animation: fade 0.8s;
+
+                .column {
+                    .h2 {
+                        color: #5562ad;
+                        font-size: 25px;
+                        font-weight: 600;
+                    }
+                    .btn {
+                        background-color: #5764ac;
+                        border: none;
+                    }
+                }
+            }
+            .row.active {
+                display: flex;
+            }
+            @keyframes fade {
+                from {
+                    opacity: 0;
+                    transform: translateX(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translate(0);
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            .inner-container {
+                width: 100%;
+            }
+        }
+    }
+    .circle1 , .circle2 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #fff;
+        background: linear-gradient(
+            to right bottom,
+            rgba(218, 177, 177, 0.9),
+            rgba(66, 66, 66, 0.1)
+        );
+        opacity: 0.7;
+        position: absolute;
+    }
+    .circle1{
+        right: 12.2%;
+        top: 2%;
+    }
+    .circle2 {
+        left: 12.2%;
+        bottom: 2%;
+    }
+}
